@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaseForMe - 맞춤형 경영 케이스 스터디</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <img class="logo-icon" src="logo-fki.png" alt="FKI 한경협국제경영원">
+          <span class="logo-text">제 50기 한경협 Intensive MBA 과정</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar">
+      <div class="progress-steps">
+        <div class="step active" data-step="profile">
+          <div class="step-dot"></div>
+          <span>프로필</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="case">
+          <div class="step-dot"></div>
+          <span>케이스</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="q1">
+          <div class="step-dot"></div>
+          <span>Q1</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="q2">
+          <div class="step-dot"></div>
+          <span>Q2</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="q3">
+          <div class="step-dot"></div>
+          <span>Q3</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="q4">
+          <div class="step-dot"></div>
+          <span>Q4</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="insight">
+          <div class="step-dot"></div>
+          <span>인사이트</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <main class="chat-area">
+      <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be inserted here -->
+      </div>
+    </main>
+
+    <!-- Input Area -->
+    <footer class="input-area" id="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="user-input"
+          placeholder="메시지를 입력하세요..."
+          rows="1"
+          maxlength="2000"
+        ></textarea>
+        <button class="send-btn" id="send-btn" title="전송">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+      <div class="input-hint" id="input-hint"></div>
+    </footer>
+
+    <!-- Quick Reply Buttons (shown when needed) -->
+    <div class="quick-replies" id="quick-replies" style="display:none;">
+      <!-- Quick reply buttons inserted dynamically -->
+    </div>
+
+    <!-- Floating Case Button -->
+    <button class="floating-case-btn" id="floating-case-btn" style="display:none;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      케이스 다시 보기
+    </button>
+
+    <!-- Case Panel (slide-in) -->
+    <div class="case-panel" id="case-panel">
+      <div class="case-panel-header">
+        <h3>케이스 자료</h3>
+        <button class="close-panel-btn" id="close-panel">&times;</button>
+      </div>
+      <div class="case-panel-body" id="case-panel-body">
+        <!-- Case content -->
+      </div>
+    </div>
+    <div class="case-panel-overlay" id="case-panel-overlay"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
